@@ -1,51 +1,13 @@
 # former
 
-Simple transformer implementation from scratch in pytorch. See http://peterbloem.nl/blog/transformers for an in-depth 
-explanation.
+This project is forked from [pbloem](https://github.com/pbloem)'s [former](https://github.com/pbloem/former) and equipped with additional data and code to conduct experiments in [this article](https://medium.com/@u41ppp/%E0%B8%A1%E0%B8%B2%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%81%E0%B8%A5%E0%B8%AD%E0%B8%99-%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-2-%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%97%E0%B8%A3%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%9F%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%A1%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%88%E0%B8%AD%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%A0%E0%B8%B1%E0%B8%A2-5d30bf64bc99). (The article is written in Thai language.)
 
-# Limitations
-
-The current models are designed to show the simplicity of transformer models and self-attention. As such 
-they will not scale as far as the bigger transformers. For that you'll need a number of tricks that 
-complicate the code (see the blog post for details).
-
-All models so far are a single stack of transformer blocks (that is, no encoder/decoder structures). It 
-turns out that this simple configuration often works best. 
-
-# Use
-
-You can clone the code and run the experiments from the root directory. E.g. 
-
+### Usage
+To run with default settings.
 ```
-python experiments/classify.py
+python experiments/generate_thai.py
 ```
-
-Hyperparameters are passed as command line arguments. The defaults should work well. The classification data is 
-automatically downloaded, the wikipedia data is included in the repository.
-
-You should be able to install as a package as well, with 
+To view available options.
 ```
-pip install git+https://github.com/pbloem/former
+python experiments/generate_thai.py --help
 ```
-but I haven't tried this. It's probably easier to just copy over the code you need. Let me know if you need this for anything and it doesn't work. 
-
-## Requirements
-
-Python 3.6+ is required.
-
-The following should install all requirements 
-```pip install torch tb-nightly tqdm numpy torchtext```
-
-You may also need
-```pip install future```
-depending on the exact python version.
-
-### conda environment
-
-The file ```environment.yml``` describes a complete conda environment with all dependencies. After cloning or downloading the project, you create the environment as follows:
-
-```
-conda env create -f environment.yml --name former
-conda activate former
-```
-
