@@ -11,3 +11,5 @@ To view available options.
 ```
 python experiments/generate_thai.py --help
 ```
+
+wanna pull?
